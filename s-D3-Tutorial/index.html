@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>D3 Tutorial</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -41,371 +41,292 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section data-markdown>
-				    <script type="text/template">
-				        # D3 Tutorial
+					<script type="text/template">
+						# D3 Tutorial
 
-				        Introduction, installation and demos.
+						Introduction, installation and simple examples.
 
-				        <small>Created by Joe / [@hijiangtao](https://hijiangtao.github.io/)</small>
-				    </script>
+						<small>Created by Joe / [@hijiangtao](https://hijiangtao.github.io/)</small>
+					</script>
 				</section>
 
 				<section data-markdown>
-				    <script type="text/template">
-				        ## MENU
+					<script type="text/template">
+						## MENU
 
-				        - D3 Introduction
-				        - D3 Installation, IDE, cases, etc
-				        - Simple examples with JS code
-				        - What's more
-				    </script>
+						- D3 Introduction and demo
+						- Installing, IDE, etc
+						- Coding: visualize your first chart
+						- More
+					</script>
 				</section>
 
 				<!-- D3 Introduction -->
 				<section>
 					<section data-markdown>
-					    <script type="text/template">
-					        ## D3 Introduction
+						<script type="text/template">
+							## D3 Introduction and demo
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### D3 Introduction
 
-					        - D3 (or D3.js) is a JavaScript library for visualizing data using web standards. D3 helps you bring data to life using SVG, Canvas and HTML. D3 combines powerful visualization and interaction techniques with a data-driven approach to DOM manipulation, giving you the full capabilities of modern browsers and the freedom to design the right visual interface for your data.
-					        - 
-					    </script>
+							- D3 (or D3.js) is a JavaScript library for visualizing data using web standards. 
+							- D3 helps you bring data to life using SVG, Canvas and HTML. 
+							- D3 combines powerful visualization and interaction techniques with a data-driven approach to DOM manipulation, giving you the full capabilities of modern browsers and the freedom to design the right visual interface for your data.
+						</script>
 					</section>
 					<section data-background-iframe="https://d3js.org/">
-						<h2>https://d3js.org/</h2>
+						<h2>&nbsp;</h2>
 					</section>
-					<section>
-					<div class="stretch">
-				  		<iframe data-src="https://d3js.org/#introduction" frameborder="0" height="100%" width="100%"></iframe>
-					</div>
-</section>
 					<section data-markdown>
-					    <script type="text/template">
-					        ## D3
+						<script type="text/template">
+							### Online Gallery
 
-					        - D3 Introduction
-					        - sadasdasdWhat's more
-					    </script>
+							- Charts: [Population Pyramid](http://bl.ocks.org/mbostock/4062085)
+							- Tree, Chord, and Sankey: [Sankey Diagrams](https://bost.ocks.org/mike/sankey/)
+							- Networks: [Collapsible Force Layout](http://mbostock.github.io/d3/talk/20111116/force-collapsible.html)
+							- Maps: [Tokyo Wind Map](http://air.nullschool.net/)
+							- Trending: [World Bank Global Development Sprint](http://d3.artzub.com/wbca/)
+						</script>
 					</section>
+					
+					<section data-markdown>
+						<script type="text/template">
+							### HTML, SVG and Canvas
+
+							- **HTML**: Hyper Text Markup Language, is a markup language for describing web documents (web pages)
+							- **SVG**: Scalable Vector Graphics. SVG defines vector-based graphics in XML format
+							- **Canvas**: The `<canvas>` element is only a container for graphics. You must use a JavaScript to actually draw the graphics. Canvas has several methods for drawing paths, boxes, circles, text, and adding images
+						</script>
+					</section>
+
 				</section>
 
-				<!-- Example of nested vertical slides -->
+				<!-- installation and IDE recommends -->
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							## Installing, IDE, etc
+						</script>
+					</section>
+					<section style="text-align: left;">
+						<h3>Installing</h3>
+						<pre><code class="html" data-trim contenteditable>
+// Use a script tag to include library
+// d3 4.0 standard version 
+<script src="https://d3js.org/d3.v4.js"></script>
+// d3 4.0 minified version
+<script src="https://d3js.org/d3.v4.min.js"></script>
+// d3 3.x version
+<script src="//d3js.org/d3.v3.js"></script>
+
+// Import D3 into an application
+npm install d3 // installing command
+import * as d3 from "d3"; // use in application
+
+// include standalone D3 microlibraries
+<script src="https://d3js.org/d3-selection.v1.js"></script>
+// or
+import {scaleLinear} from "d3-scale";
+						</code></pre>
+					</section>
+					<section style="text-align: left;" data-markdown>
+						<script type="text/template">
+							### Installing
+
+							- API: [Arrays](https://github.com/d3/d3/blob/master/API.md#arrays-d3-array) ([Statistics](https://github.com/d3/d3/blob/master/API.md#statistics), [Search](https://github.com/d3/d3/blob/master/API.md#search), [Transformations](https://github.com/d3/d3/blob/master/API.md#transformations), [Histograms](https://github.com/d3/d3/blob/master/API.md#histograms)), [Axes](https://github.com/d3/d3/blob/master/API.md#axes-d3-axis), [Brushes](https://github.com/d3/d3/blob/master/API.md#brushes-d3-brush), [Chords](https://github.com/d3/d3/blob/master/API.md#chords-d3-chord), [Collections](https://github.com/d3/d3/blob/master/API.md#collections-d3-collection) ([Objects](https://github.com/d3/d3/blob/master/API.md#objects), [Maps](https://github.com/d3/d3/blob/master/API.md#maps)...
+							- After include the library into your workspace, you can use namespace **d3** to visualize your data, such as:
+							```
+							d3.select("body").append("p").text("New paragraph!");
+							``` 
+						</script>
+					</section>
+					<section style="text-align: left;" data-markdown>
+						<script type="text/template">
+							### IDE
+
+							- Microsoft Notepad
+							- [**Sublime Text**](https://www.sublimetext.com/): A sophisticated text editor for code, markup and prose
+							- [**Webstorm**](https://www.jetbrains.com/webstorm/): The smartest JavaScript IDE
+							- [IntelliJ IDEA](https://www.jetbrains.com/idea/?fromMenu): Capable and Ergonomic Java * IDE
+							- [Eclipse](https://eclipse.org/): Eclipse IDE for JavaScript Web Developers
+							- [Atom](https://atom.io/): A hackable text editor
+							- [Notepad++](https://notepad-plus-plus.org/): A free source code editor
+						</script>
+					</section>
+				</section>
+				
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2>4 steps to visualize your first chart</h2>
+						<p>Construct a simple bar chart from TSV file</p>
+					</section>
+					<section style="text-align: left;" data-markdown>
+						<script type="text/template">
+							### 0. Data
+
+							![](./assets/tsv-data-img.png)
+						</script>
+					</section>
+					<section style="text-align: left;" >
+						<h3>1. A HTML Template</h3>
+						<pre><code class="html hljs xml" data-trim contenteditable>
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;title&gt;D3 Tutorial&lt;/title&gt;
+	&lt;script src=&quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+
+	&lt;style&gt;
+	.bar {
+	  fill: steelblue;
+	}
+	.bar:hover {
+	  fill: brown;
+	}
+	.axis--x path {
+	  display: none;
+	}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div id=&quot;barchart&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+						</code></pre>
+					</section>
+					<section style="text-align: left;" >
+						<h3>2. Initial svg and scale</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+// append a svg element and define margins
+var svg = d3.select("#barchart")
+	.append("svg")
+	.attr("width", 960)
+	.attr("height", 500),
+    margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom;
+
+// Constructs a new band scale (x) and a new continuous scale (y)
+var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+    y = d3.scaleLinear().rangeRound([height, 0]);
+
+// append g element
+var transStr = "translate(" + margin.left + "," + margin.top + ")";
+var g = svg.append("g")
+    .attr("transform", transStr);
+						</code></pre>
+					</section>
+					<section style="text-align: left;" >
+						<h3>3. Load and format data</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+// d3 tsv Function
+// Creates a request for the TSV file at the specified url 
+// with the default mime type text/tab-separated-values
+d3.tsv(url, row, callback);
+
+d3.tsv("d3-tutorial-tsv-data.tsv", function(d) {
+  d.frequency = +d.frequency;
+  return d;
+}, barchartCallback);
+						</code></pre>
+						
+						<small>
+							<p>Requests (d3-request)</p>
+							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#csv">d3.csv</a> - get a comma-separated values (CSV) file.</li>
+							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#html">d3.html</a> - get an HTML file.</li>
+							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#json">d3.json</a> - get a JSON file.</li>
+							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#text">d3.text</a> - get a plain text file.</li>
+							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#tsv">d3.tsv</a> - get a tab-separated values (TSV) file.</li>
+							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#xml">d3.xml</a> - get an XML file.</li>
+						</small>
+					</section>
+					<section style="text-align: left;" >
+						<h3>4. Bind data and update element</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+function barchartCallback(error, data) {
+  if (error) throw error;
+
+  // Given a value from the domain
+  // returns the corresponding value from the range.
+  x.domain(data.map(function(d) { 
+  	return d.letter; 
+  }));
+  y.domain([0, d3.max(data, function(d) { 
+  	return d.frequency; 
+  })]);
+
+  // x axis
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+  
+  // y axis
+  g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y).ticks(10, "%"))
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("text-anchor", "end")
+      .text("Frequency");
+
+  // bind data and define rect element generating rule
+  g.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.letter); })
+      .attr("y", function(d) { return y(d.frequency); })
+      .attr("width", x.bandwidth())
+      .attr("height", function(d) { 
+      	return height - y(d.frequency); 
+      });
+}
+						</code></pre>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						<h3>5. <a href="">Complete Codes</a></h3>
+						<div class="stretch">
+						  <iframe data-src="https://raw.githubusercontent.com/ISCAS-VIS/infovis-ucas/master/index.html" height="100%" width="100%" />
 						</div>
 					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
+					<section style="text-align: left;" data-markdown>
+						<script type="text/template">
+							### 6. Data
+
+							![](./assets/bar-chart-result.png)
+						</script>
 					</section>
 				</section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+					<section>
+						<h2>More</h2>
+						<p>Be careful about the API's differences between 4.0 and 3.x</p>
+						<p class="fragment">Be careful about async loading in JavaScript</p>
+						<p class="fragment">Make good use of </p>
+					</section>
+					<section style="text-align: left;" data-markdown>
+						<script type="text/template">
+							## More
 
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
+							- []()
+						</script>
+					</section>
 				</section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
+					<p>Joe 2016.10</p>
 					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+						- <a href="https://d3js.org/">d3js.org</a> <br>
+						- <a href="http://vis.ios.ac.cn/UCAS_16_Fall/">VIS Course (2016 Fall) Wiki</a>
+						- <a href="https//hijiangtao.github.io/">Joe's Blog</a>
 					</p>
 				</section>
 
