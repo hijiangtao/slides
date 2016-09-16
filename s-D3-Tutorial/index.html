@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>D3 Tutorial</title>
+		<title>D3 Basic Tutorial</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="../css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="../css/theme/solarized.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="../lib/css/zenburn.css">
@@ -42,11 +42,11 @@
 			<div class="slides">
 				<section data-markdown>
 					<script type="text/template">
-						# D3 Tutorial
+						# D3 Basic Tutorial
 
 						Introduction, installation and simple examples.
 
-						<small>Created by Joe / [@hijiangtao](https://hijiangtao.github.io/)</small>
+						<small>[@hijiangtao](https://hijiangtao.github.io/) 2016.10</small>
 					</script>
 				</section>
 
@@ -290,42 +290,138 @@ function barchartCallback(error, data) {
 						</code></pre>
 					</section>
 					<section>
-						<h3>5. <a href="">Complete Codes</a></h3>
-						<div class="stretch">
-						  <iframe data-src="https://raw.githubusercontent.com/ISCAS-VIS/infovis-ucas/master/index.html" height="100%" width="100%" />
-						</div>
+						<h3>5. <a href="https://github.com/ISCAS-VIS/infovis-ucas/blob/master/src/views/TA/d3-tutorial-bar-chart.html">Complete Codes</a></h3>
+						<pre><code class="hljs" data-trim contenteditable>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;D3 Tutorial&lt;/title&gt;
+  &lt;script src=&quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+
+  &lt;style&gt;
+  .bar {
+    fill: steelblue;
+  }
+  .bar:hover {
+    fill: brown;
+  }
+  .axis--x path {
+    display: none;
+  }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;barchart&quot;&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    // append a svg element and define margins
+    var svg = d3.select(&quot;#barchart&quot;)
+      .append(&quot;svg&quot;)
+      .attr(&quot;width&quot;, 960)
+      .attr(&quot;height&quot;, 500),
+        margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = +svg.attr(&quot;width&quot;) - margin.left - margin.right,
+        height = +svg.attr(&quot;height&quot;) - margin.top - margin.bottom;
+
+    // Constructs a new band scale (x) and a new continuous scale (y)
+    var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+        y = d3.scaleLinear().rangeRound([height, 0]);
+
+    // append g element
+    var transStr = &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;;
+    var g = svg.append(&quot;g&quot;)
+        .attr(&quot;transform&quot;, transStr);
+
+    d3.tsv(&quot;./data/d3-tutorial-tsv-data.tsv&quot;, function(d) {
+      d.frequency = +d.frequency;
+      return d;
+    }, barchartCallback);
+
+    function barchartCallback(error, data) {
+      if (error) throw error;
+
+      // Given a value from the domain
+      // returns the corresponding value from the range.
+      x.domain(data.map(function(d) { 
+        return d.letter; 
+      }));
+      y.domain([0, d3.max(data, function(d) { 
+        return d.frequency; 
+      })]);
+
+      // x axis
+      g.append(&quot;g&quot;)
+          .attr(&quot;class&quot;, &quot;axis axis--x&quot;)
+          .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
+          .call(d3.axisBottom(x));
+      
+      // y axis
+      g.append(&quot;g&quot;)
+          .attr(&quot;class&quot;, &quot;axis axis--y&quot;)
+          .call(d3.axisLeft(y).ticks(10, &quot;%&quot;))
+        .append(&quot;text&quot;)
+          .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
+          .attr(&quot;y&quot;, 6)
+          .attr(&quot;dy&quot;, &quot;0.71em&quot;)
+          .attr(&quot;text-anchor&quot;, &quot;end&quot;)
+          .text(&quot;Frequency&quot;);
+
+      // bind data and define rect element generating rule
+      g.selectAll(&quot;.bar&quot;)
+        .data(data)
+        .enter().append(&quot;rect&quot;)
+          .attr(&quot;class&quot;, &quot;bar&quot;)
+          .attr(&quot;x&quot;, function(d) { return x(d.letter); })
+          .attr(&quot;y&quot;, function(d) { return y(d.frequency); })
+          .attr(&quot;width&quot;, x.bandwidth())
+          .attr(&quot;height&quot;, function(d) { 
+            return height - y(d.frequency); 
+          });
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+						</code></pre>
 					</section>
 					<section style="text-align: left;" data-markdown>
 						<script type="text/template">
-							### 6. Data
+							### 6. [Result](https://iscas-vis.github.io/infovis-ucas/src/views/TA/d3-tutorial-bar-chart.html)
 
-							![](./assets/bar-chart-result.png)
+							![https://iscas-vis.github.io/infovis-ucas/src/views/TA/](./assets/bar-chart-result.png)
 						</script>
 					</section>
 				</section>
 
-				<section>
+				<section style="text-align: left;">
 					<section>
 						<h2>More</h2>
 						<p>Be careful about the API's differences between 4.0 and 3.x</p>
 						<p class="fragment">Be careful about async loading in JavaScript</p>
-						<p class="fragment">Make good use of </p>
+						<p class="fragment">Make good use of Google, Stack Overflow, etc.</p>
 					</section>
 					<section style="text-align: left;" data-markdown>
 						<script type="text/template">
 							## More
 
-							- []()
+							- [D3 WIKI](https://github.com/d3/d3/wiki)
+							- [D3 API Reference](https://github.com/d3/d3/blob/master/API.md)
+							- [D3 Gallery](https://github.com/d3/d3/wiki/Gallery)
+							- [Mike's Blog](http://bost.ocks.org/mike/)
+							- [Tutorials](https://github.com/d3/d3/wiki/Tutorials)
+							- BOOK: Getting Started with D3, Mike Dewar, O'Reilly Media, June 2012
+							- BOOK: 精通D3.js：交互式数据可视化高级编程, 吕之华
+							- BOOK: 大数据丛书：数据可视化, 陈为，沈则潜，陶煜波 等著
+							- BOOK: JavaScript高级程序设计（第3版） / Professional JavaScript for Web Developers 3rd Edition
 						</script>
 					</section>
 				</section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
-					<p>Joe 2016.10</p>
+					<p>@hijiangtao</p>
 					<p>
 						- <a href="https://d3js.org/">d3js.org</a> <br>
-						- <a href="http://vis.ios.ac.cn/UCAS_16_Fall/">VIS Course (2016 Fall) Wiki</a>
+						- <a href="http://vis.ios.ac.cn/UCAS_16_Fall/">VIS Course (2016 Fall) Wiki</a><br>
 						- <a href="https//hijiangtao.github.io/">Joe's Blog</a>
 					</p>
 				</section>
