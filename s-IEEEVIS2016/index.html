@@ -32,6 +32,12 @@
 		<!--[if lt IE 9]>
 		<script src="../lib/js/html5shiv.js"></script>
 		<![endif]-->
+
+		<style type="text/css">
+			.leftsection {
+				text-align: left;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -50,19 +56,20 @@
 					</script>
 				</section>
 
-				<section data-markdown>
+				<section class="leftsection" data-markdown>
 					<script type="text/template">
 						## Outline
 
 						- VIS PROGRAM
-						- VAST & Session: Traffic and Urban Planning
-						- Arts Program
-						- Some spots
+						- VAST Sessions
+						- Dr. Zhao's works
+						- Posters and Arts Program
+						- Some Highlights
 					</script>
 				</section>
 
 				<!-- VIS PROGRAM INTRODUCTION -->
-				<section>
+				<section class="leftsection">
 					<section data-markdown>
 						<script type="text/template">
 							## VIS PROGRAM
@@ -70,322 +77,147 @@
 					</section>
 					<section data-markdown>
 						<script type="text/template">
-							### D3 Introduction
+							### Papers
 
-							- D3 (or D3.js) is a JavaScript library for visualizing data using web standards. 
-							- D3 helps you bring data to life using SVG, Canvas and HTML. 
-							- D3 combines powerful visualization and interaction techniques with a data-driven approach to DOM manipulation, giving you the full capabilities of modern browsers and the freedom to design the right visual interface for your data.
+							- VAST
+								- journal special issue papers
+								- conference papers
+							- InfoVis (journal special issue papers)
+							- SciVis (journal special issue papers)
+							- TVCG (previously published journal papers presented at VIS)
+							- CG&A (previously published journal papers presented at VIS)
 						</script>
 					</section>
 					<section data-markdown>
 						<script type="text/template">
-							### [d3js.org](https://d3js.org/)
-							![](./assets/d3js.org.png)
+							### Associated Events
+
+							- Posters
+							- Tutorial
+							- Workshops
+							- Panels
+							- Doctoral Colloquium
+							- Meetups
 						</script>
 					</section>
-					<section data-markdown>
-						<script type="text/template">
-							### Online Gallery
-
-							- Charts: [Population Pyramid](http://bl.ocks.org/mbostock/4062085)
-							- Tree, Chord, and Sankey: [Sankey Diagrams](https://bost.ocks.org/mike/sankey/)
-							- Networks: [Collapsible Force Layout](http://mbostock.github.io/d3/talk/20111116/force-collapsible.html)
-							- Maps: [Tokyo Wind Map](http://air.nullschool.net/)
-							- Trending: [World Bank Global Development Sprint](http://d3.artzub.com/wbca/)
-						</script>
-					</section>
-					
-					<section data-markdown>
-						<script type="text/template">
-							### HTML, SVG and Canvas
-
-							- **HTML**: Hyper Text Markup Language, is a markup language for describing web documents (web pages)
-							- **SVG**: Scalable Vector Graphics. SVG defines vector-based graphics in XML format
-							- **Canvas**: The `<canvas>` element is only a container for graphics. You must use a JavaScript to actually draw the graphics. Canvas has several methods for drawing paths, boxes, circles, text, and adding images
-						</script>
-					</section>
-
 				</section>
 
-				<!-- installation and IDE recommends -->
-				<section>
+				<!-- VAST Sessions -->
+				<section class="leftsection">
 					<section data-markdown>
 						<script type="text/template">
-							## VAST & Session: Traffic and Urban Planning
+							## VAST Sessions
+							
+							- 25th, Oct: Traffic and Urban Planning / Exploratory Analysis / Machine Learning
+							- 26th, Oct: Textual Data / Managing Visual Analytic Process / Biomedical Visualization
+							- 27th, Oct: Social Media Data and Events / Complementing Visual and Algorithmic Analysis / User Behaviors / Visual Knowledge Discovery and Sense-Making / Education and Games
+							- 28th, Oct: Time-Series Data
 						</script>
 					</section>
-					<section>
-						## test vis system
-						<iframe data-src="http://hakim.se"></iframe>
+					<section data-markdown>
+						### Traffic and Urban Planning
+
+						- SmartAdP: Visual Analytics of Large-scale Taxi Trajectories for Selecting Billboard Locations, Dongyu Liu, Di Weng, Yuhong Li, Jie Bao, Yu Zheng, Huamin Qu, Yingcai Wu
+						- SemanticTraj: A New Approach to Interacting with Massive Taxi Trajectories, Shamal AL-Dohuki, Farah Kamw, Ye Zhao, Chao Ma, Yingyu Wu, Jing Yang, Xinyue Ye, Fei Wang, Xin Li, Wei Chen
+					</section>
+					<section data-markdown>
+						### SmartAdP
+
+						Identifying the optimal billboard locations using massive trajectory data.
+
+						![](./assets/smartadp-1.png)
+					</section>
+					<section data-markdown>
+						#### Backgrounds
+
+						- Finding befitting areas to place billboards.
+						- Selecting proper locations in the specified areas.
+						- Evaluating a solution and convincing customers. 
+						- Providing customers with multiple solutions.
+					</section>
+					<section data-markdown>
+						#### Tasks and Models
+
+						**Spatio-temporal distribution and location recommendation**: Road network data, GPS trjectory and POI data. MongoDB indexes. Two interactive queries.
+					</section>
+					<section data-markdown>
+						#### Tasks and Visual Designs
+
+						**Results' assessment**: 
+					</section>
+					<section data-markdown>
+						#### Tasks and Visual Designs
+
+						**Solution comparison, classification and ranking**: 
+					</section>
+					<section data-markdown>
+						#### Case studies
+
+					</section>
+					<section data-markdown>
+						#### Conclusion
+
+					</section>
+					<section data-markdown>
+						### SemanticTraj
 					</section>
 				</section>
 				
+				<!-- Dr. Zhao's works -->
 				<section>
-					<section>
-						<h2>4 steps to visualize your first chart</h2>
-						<p>Construct a simple bar chart from TSV file</p>
-					</section>
-					<section style="text-align: left;" data-markdown>
-						<script type="text/template">
-							### 0. Data
+					<section data-markdown>
+						## vis.cs.kent.edu 
 
-							![](./assets/tsv-data-img.png)
+						- [NY Taxi Trip](http://vis.cs.kent.edu/NYTaxi/): Data of taxi trips. Taxi trip refers to a taxi carrying its passengers from their origin (pickup) location to destination (dropoff) location.
+						- [Porto Taxi Trip](http://vis.cs.kent.edu/PortoTrajectories/): Real-world mobility data of taxi trajectories. Taxi trajectory is the recording of the positions of a taxi at specific space-time domain, for a given taxi and a given time interval, it is presented as a sequence of geometric location in 2D spatial system (xi, yi, ti).
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### NY Taxi Trip
+
+							![](./assets/zhao-taxi-teaser2.png)
 						</script>
 					</section>
-					<section style="text-align: left;" >
-						<h3>1. A HTML Template</h3>
-						<pre><code class="html hljs xml" data-trim contenteditable>
-&lt;html&gt;
-&lt;head&gt;
-	&lt;meta charset=&quot;utf-8&quot;&gt;
-	&lt;title&gt;D3 Tutorial&lt;/title&gt;
-	&lt;script src=&quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+					<section data-markdown>
+						<script type="text/template">
+							### Porto Taxi Trip
 
-	&lt;style&gt;
-	.bar {
-	  fill: steelblue;
-	}
-	.bar:hover {
-	  fill: brown;
-	}
-	.axis--x path {
-	  display: none;
-	}
-	&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;div id=&quot;barchart&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-						</code></pre>
+							![](./assets/zhao-taxi-teaser.png)
+						</script>
 					</section>
-					<section style="text-align: left;" >
-						<h3>2. Initial svg and scale</h3>
-						<pre><code class="hljs" data-trim contenteditable>
-// append a svg element and define margins
-var svg = d3.select("#barchart")
-	.append("svg")
-	.attr("width", 960)
-	.attr("height", 500),
-    margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom;
-
-// Constructs a new band scale (x) and a new continuous scale (y)
-var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
-    y = d3.scaleLinear().rangeRound([height, 0]);
-
-// append g element
-var transStr = "translate(" + margin.left + "," + margin.top + ")";
-var g = svg.append("g")
-    .attr("transform", transStr);
-						</code></pre>
+				</section>
+				
+				<!-- Posters and Arts Program -->
+				<section>
+					<section data-markdown>
+						## Posters and Arts Program
 					</section>
-					<section style="text-align: left;" >
-						<h3>3. Load and format data</h3>
-						<pre><code class="hljs" data-trim contenteditable>
-// d3 tsv Function
-// Creates a request for the TSV file at the specified url 
-// with the default mime type text/tab-separated-values
-d3.tsv(url, row, callback);
-
-d3.tsv("d3-tutorial-tsv-data.tsv", function(d) {
-  d.frequency = +d.frequency;
-  return d;
-}, barchartCallback);
-						</code></pre>
+					<section data-markdown>
 						
-						<small>
-							<p>Requests (d3-request)</p>
-							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#csv">d3.csv</a> - get a comma-separated values (CSV) file.</li>
-							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#html">d3.html</a> - get an HTML file.</li>
-							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#json">d3.json</a> - get a JSON file.</li>
-							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#text">d3.text</a> - get a plain text file.</li>
-							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#tsv">d3.tsv</a> - get a tab-separated values (TSV) file.</li>
-							<li><a href="https://github.com/d3/d3-request/blob/master/README.md#xml">d3.xml</a> - get an XML file.</li>
-						</small>
 					</section>
-					<section style="text-align: left;" >
-						<h3>4. Bind data and update element</h3>
-						<pre><code class="hljs" data-trim contenteditable>
-function barchartCallback(error, data) {
-  if (error) throw error;
-
-  // Given a value from the domain
-  // returns the corresponding value from the range.
-  x.domain(data.map(function(d) { 
-  	return d.letter; 
-  }));
-  y.domain([0, d3.max(data, function(d) { 
-  	return d.frequency; 
-  })]);
-
-  // x axis
-  g.append("g")
-      .attr("class", "axis axis--x")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-  
-  // y axis
-  g.append("g")
-      .attr("class", "axis axis--y")
-      .call(d3.axisLeft(y).ticks(10, "%"))
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", "0.71em")
-      .attr("text-anchor", "end")
-      .text("Frequency");
-
-  // bind data and define rect element generating rule
-  g.selectAll(".bar")
-    .data(data)
-    .enter().append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d.letter); })
-      .attr("y", function(d) { return y(d.frequency); })
-      .attr("width", x.bandwidth())
-      .attr("height", function(d) { 
-      	return height - y(d.frequency); 
-      });
-}
-						</code></pre>
-					</section>
-					<section style="text-align: left;" >
-						<h3>5. <a target="_blank" href="https://github.com/ISCAS-VIS/infovis-ucas/blob/master/views/TA/d3-tutorial-bar-chart.html">Complete Codes</a></h3>
-						<pre><code class="hljs" data-trim contenteditable>
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;D3 Tutorial&lt;/title&gt;
-  &lt;script src=&quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;
-
-  &lt;style&gt;
-  .bar {
-    fill: steelblue;
-  }
-  .bar:hover {
-    fill: brown;
-  }
-  .axis--x path {
-    display: none;
-  }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div id=&quot;barchart&quot;&gt;&lt;/div&gt;
-
-  &lt;script&gt;
-    // append a svg element and define margins
-    var svg = d3.select(&quot;#barchart&quot;)
-      .append(&quot;svg&quot;)
-      .attr(&quot;width&quot;, 960)
-      .attr(&quot;height&quot;, 500),
-        margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = +svg.attr(&quot;width&quot;) - margin.left - margin.right,
-        height = +svg.attr(&quot;height&quot;) - margin.top - margin.bottom;
-
-    // Constructs a new band scale (x) and a new continuous scale (y)
-    var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
-        y = d3.scaleLinear().rangeRound([height, 0]);
-
-    // append g element
-    var transStr = &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;;
-    var g = svg.append(&quot;g&quot;)
-        .attr(&quot;transform&quot;, transStr);
-
-    d3.tsv(&quot;./data/d3-tutorial-tsv-data.tsv&quot;, function(d) {
-      d.frequency = +d.frequency;
-      return d;
-    }, barchartCallback);
-
-    function barchartCallback(error, data) {
-      if (error) throw error;
-
-      // Given a value from the domain
-      // returns the corresponding value from the range.
-      x.domain(data.map(function(d) { 
-        return d.letter; 
-      }));
-      y.domain([0, d3.max(data, function(d) { 
-        return d.frequency; 
-      })]);
-
-      // x axis
-      g.append(&quot;g&quot;)
-          .attr(&quot;class&quot;, &quot;axis axis--x&quot;)
-          .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
-          .call(d3.axisBottom(x));
-      
-      // y axis
-      g.append(&quot;g&quot;)
-          .attr(&quot;class&quot;, &quot;axis axis--y&quot;)
-          .call(d3.axisLeft(y).ticks(10, &quot;%&quot;))
-        .append(&quot;text&quot;)
-          .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
-          .attr(&quot;y&quot;, 6)
-          .attr(&quot;dy&quot;, &quot;0.71em&quot;)
-          .attr(&quot;text-anchor&quot;, &quot;end&quot;)
-          .text(&quot;Frequency&quot;);
-
-      // bind data and define rect element generating rule
-      g.selectAll(&quot;.bar&quot;)
-        .data(data)
-        .enter().append(&quot;rect&quot;)
-          .attr(&quot;class&quot;, &quot;bar&quot;)
-          .attr(&quot;x&quot;, function(d) { return x(d.letter); })
-          .attr(&quot;y&quot;, function(d) { return y(d.frequency); })
-          .attr(&quot;width&quot;, x.bandwidth())
-          .attr(&quot;height&quot;, function(d) { 
-            return height - y(d.frequency); 
-          });
-    }
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-						</code></pre>
-					</section>
-					<section style="text-align: left;" data-markdown>
-						<script type="text/template">
-							### 6. [Result](https://iscas-vis.github.io/infovis-ucas/views/TA/d3-tutorial-bar-chart.html)
-
-							![https://iscas-vis.github.io/infovis-ucas/views/TA/](./assets/bar-chart-result.png)
-						</script>
-					</section>
-				</section>
-
-				<section style="text-align: left;">
+					<!-- https://uclab.fh-potsdam.de/cf/ -->
 					<section>
-						<h2>More</h2>
-						<p>Be careful about the API's differences between 4.0 and 3.x</p>
-						<p class="fragment">Be careful about async loading in JavaScript</p>
-						<p class="fragment">Make good use of Google, Stack Overflow, etc.</p>
+						<h3>cf. city flows</h3>
+						<iframe class="stretch" data-src="https://player.vimeo.com/video/173760057"></iframe>
 					</section>
-					<section style="text-align: left;" data-markdown>
-						<script type="text/template">
-							## More
+					<!-- http://offenhuber.net/urban-radiance/ -->
+					<section data-markdown>
+						### Urban Radiance, East Asia 1992-2013
 
-							- [D3 WIKI](https://github.com/d3/d3/wiki)
-							- [D3 API Reference](https://github.com/d3/d3/blob/master/API.md)
-							- [D3 Gallery](https://github.com/d3/d3/wiki/Gallery)
-							- [Mike's Blog](http://bost.ocks.org/mike/)
-							- [Tutorials](https://github.com/d3/d3/wiki/Tutorials)
-							- [Getting Started with D3](https://book.douban.com/subject/10877588/), Mike Dewar, O'Reilly Media, June 2012
-							- [精通D3.js：交互式数据可视化高级编程](https://book.douban.com/subject/26599680/), 吕之华
-							- [数据可视化](https://book.douban.com/subject/25760272/), 陈为，沈则潜，陶煜波 等著
-							- [JavaScript高级程序设计（第3版）](https://book.douban.com/subject/10546125/) / English Version [Professional JavaScript for Web Developers 3rd Edition](https://book.douban.com/subject/7157249/)
-						</script>
+						![](./assets/frame_31-1.jpg)
 					</section>
 				</section>
+				
+				<!-- Some Highlights -->
+				<section>
+					
+				</section>
 
+				<!-- END -->
 				<section style="text-align: left;">
 					<h1>THE END</h1>
-					<p>@hijiangtao</p>
-					<p>
-						- <a href="https://d3js.org/" target="_blank">d3js.org</a> <br>
-						- <a href="http://vis.ios.ac.cn/UCAS_16_Fall/" target="_blank">VIS Course (2016 Fall) Wiki</a><br>
-						- <a href="https://hijiangtao.github.io/" target="_blank">Joe's Blog</a>
-					</p>
+					<p><a href="https://hijiangtao.github.io/" target="_blank">@hijiangtao</a></p>
+					<small>2016.11</small>
 				</section>
 
 			</div>
@@ -403,6 +235,7 @@ function barchartCallback(error, data) {
 				progress: true,
 				history: true,
 				center: true,
+				// previewLinks: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
