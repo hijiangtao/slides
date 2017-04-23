@@ -54,10 +54,14 @@
 					<script type="text/template">
 						# MENU
 
-						- BFS
-						- DFS
-						- Topological Sort
-						- Computing Strong Components
+						- GRAPH SEARCH AND CONNECTIVITY
+							- BFS
+							- DFS
+						- Data Structure
+							- HEAPS
+							- BST/AVL
+							- HASHING
+							- BLOOM FILTERS
 					</script>
 				</section>
 				
@@ -65,88 +69,90 @@
 					## GRAPH SEARCH AND CONNECTIVITY
 				</section>
 
-				<section data-markdown>
-					## Breadth-first search
+				<section>
+					<section data-markdown>
+						## Breadth-first search
 
-					```
-					Breadth-First-Search(Graph, root):
-						
-						create empty set S
-						create empty queue Q      
+						```
+						Breadth-First-Search(Graph, root):
+							
+							create empty set S
+							create empty queue Q      
 
-						add root to S
-						Q.enqueue(root)                      
+							add root to S
+							Q.enqueue(root)                      
 
-						while Q is not empty:
-							current = Q.dequeue()
-							if current is the goal:
-								return current
-							for each node n that is adjacent to current:
-								if n is not in S:
-									add n to S
-									n.parent = current
-									Q.enqueue(n)
-					```
-				</section>
+							while Q is not empty:
+								current = Q.dequeue()
+								if current is the goal:
+									return current
+								for each node n that is adjacent to current:
+									if n is not in S:
+										add n to S
+										n.parent = current
+										Q.enqueue(n)
+						```
+					</section>
 
-				<section data-markdown>
-					## BFS Application: Shortest Paths
+					<section data-markdown>
+						## BFS Application: Shortest Paths
 
-					* 问题: 在无向图 G=(V,E) 中，假设每条边 E[i] 的长度为 w[i]，找最短路径。
-					* 确定起点的最短路径问题: s 到 t 的最低权重路径 (Dijkstra)
-					* 若边权可能为负值,该如何计算?
-					* 确定终点的最短路径问题
-					* 确定起点终点的最短路径问题
-					* 全局最短路径问题 (Floyd-Warshall)
-				</section>
+						* 问题: 在无向图 G=(V,E) 中，假设每条边 E[i] 的长度为 w[i]，找最短路径。
+						* 确定起点的最短路径问题: s 到 t 的最低权重路径 (Dijkstra)
+						* 若边权可能为负值,该如何计算?
+						* 确定终点的最短路径问题
+						* 确定起点终点的最短路径问题
+						* 全局最短路径问题 (Floyd-Warshall)
+					</section>
 
-				<section data-markdown>
-					## BFS Application: Shortest Paths
+					<section data-markdown>
+						## BFS Application: Shortest Paths
 
-					- [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-					- [Bellman–Ford algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
-					- [A\* search algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
-					- [Floyd-Warshall algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
-					- Johnson's algorithm.
-					- Viterbi algorithm.
-				</section>
-				
-				<section data-markdown>
-					## BFS Application: Undirected Connectivity
-
-					* 在无向图 G=(V,E) 中，判断整个图是否连通
-					* 图中存在几个 connected components
-					* 判断给定两个点之间是否连通
-					* 图中环的检测
-				</section>
-
-				<section data-markdown>
-					## Application: Bipartite graph
-
-					A Bipartite Graph is a graph whose vertices can be divided into two independent sets, U and V such that every edge (u,v) either connects a vertex from U to V or a vertex from V to U.
-
-					![](./assets/Bipartite1.png)
-				</section>
-
-				<section data-markdown>
-					### Backtracking Algorithm
-
-					* Assign RED color to the source vertex.
-					* Color all the neighbors with BLUE color.
-					* Loop until all vertexs are visited.
+						- [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+						- [Bellman–Ford algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
+						- [A\* search algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
+						- [Floyd-Warshall algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
+						- Johnson's algorithm.
+						- Viterbi algorithm.
+					</section>
 					
-					*An edge from u to v exists and destination v is not colored or colored with same color as u;*
+					<section data-markdown>
+						## BFS Application: Undirected Connectivity
 
-					![](./assets/BipartiteGraph.png)
-				</section>
+						* 在无向图 G=(V,E) 中，判断整个图是否连通
+						* 图中存在几个 connected components
+						* 判断给定两个点之间是否连通
+						* 图中环的检测
+					</section>
 
-				<section data-markdown>
-					### [Graph coloring](https://en.wikipedia.org/wiki/Graph_coloring) and Others
+					<section data-markdown>
+						## Application: Bipartite graph
 
-					* Repeatedly call above method for not strongly connected graph.
-					* Before assigning a color, we check for safety by considering already assigned colors to the adjacent vertices. If we find a safe color assignment, we mark the color assignment as part of solution. If we do not a find color due to clashes then we backtrack and return false.
+						A Bipartite Graph is a graph whose vertices can be divided into two independent sets, U and V such that every edge (u,v) either connects a vertex from U to V or a vertex from V to U.
 
-					![](./assets/GraphColoring.png)
+						![](./assets/Bipartite1.png)
+					</section>
+
+					<section data-markdown>
+						### Backtracking Algorithm
+
+						* Assign RED color to the source vertex.
+						* Color all the neighbors with BLUE color.
+						* Loop until all vertexs are visited.
+						
+						*An edge from u to v exists and destination v is not colored or colored with same color as u;*
+
+						![](./assets/BipartiteGraph.png)
+					</section>
+
+					<section data-markdown>
+						### [Graph coloring](https://en.wikipedia.org/wiki/Graph_coloring) and Others
+
+						* Repeatedly call above method for not strongly connected graph.
+						* Before assigning a color, we check for safety by considering already assigned colors to the adjacent vertices. If we find a safe color assignment, we mark the color assignment as part of solution. If we do not a find color due to clashes then we backtrack and return false.
+
+						![](./assets/GraphColoring.png)
+					</section>
 				</section>
 
 				<section data-markdown>
@@ -299,38 +305,46 @@
 						* Left Rotation:左旋,右子树右子节点
 						* Right Rotation:右旋,左子树左子节点
 						* Left-Right Rotation:先左旋再右旋,左子树右子节点
-						* Right-Left Rotation:先右旋再左旋,右子树左子节点
+						* Right-Left Rotation:先右旋再左旋,右子树左子节点 (由于在a的右子树根结点的左子树上插入结点，a的平衡因子由-1变为-2，致使以*a为根的子树失去平衡，则需进行两次旋转（先右旋后左旋）操作)
 
 						Q: 如何判断一棵树是否是平衡二叉树?
 					</section>
 				</section>
 
 
-				<section data-markdown>
-					## HASHING RELATED
+				<section>
+					<section data-markdown>
+						## HASHING RELATED
 
-					哈希表的实现主要需要解决两个问题，哈希函数和冲突解决。
+						哈希表的实现主要需要解决两个问题，哈希函数和冲突解决。
 
-					* 哈希函数也叫散列函数，它对不同的输出值得到一个固定长度的消息摘要。理想的哈希函数对于不同的输入应该产生不同的结构，同时散列结果应当具有同一性（输出值尽量均匀）和雪崩效应（微小的输入值变化使得输出值发生巨大的变化）。
-					* 现实中的哈希函数不是完美的，当两个不同的输入值对应一个输出值时，就会产生“碰撞”，这个时候便需要解决冲突。常见的冲突解决方法有开放定址法，链地址法，建立公共溢出区等。实际的哈希表实现中，使用最多的是链地址法
+						* 哈希函数也叫散列函数，它对不同的输出值得到一个固定长度的消息摘要。理想的哈希函数对于不同的输入应该产生不同的结构，同时散列结果应当具有同一性（输出值尽量均匀）和雪崩效应（微小的输入值变化使得输出值发生巨大的变化）。
+						* 现实中的哈希函数不是完美的，当两个不同的输入值对应一个输出值时，就会产生“碰撞”，这个时候便需要解决冲突。常见的冲突解决方法有开放定址法，链地址法，建立公共溢出区等。实际的哈希表实现中，使用最多的是链地址法
+					</section>
+
+					<section data-markdown>
+						### Application: The 2-SUM Problem
+
+						Input: unsorted array A of n integers, Target sum t;
+						Goal: determine whether or not there are two numbers x, y in A with x+y=t
+
+						* Naive Solution: O(n^2) time via exhaustive search
+						* Better: Sort A with O(nlogn) time; For each x in A, look for t-x in A via binary search (O(nlogn))
+						* Amazing: Insert elements of A into hash table H; For each x in A, lookup t-x (O(n))
+					</section>
 				</section>
 
 				<section data-markdown>
-					### Application: The 2-SUM Problem
+					## [BLOOM FILTERS](https://en.wikipedia.org/wiki/Bloom_filter)
 
-					Input: unsorted array A of n integers, Target sum t;
-					Goal: determine whether or not there are two numbers x, y in A with x+y=t
+					A Bloom filter is a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set.
 
-					* Naive Solution: O(n^2) time via exhaustive search
-					* Better: Sort A with O(nlogn) time; For each x in A, look for t-x in A via binary search (O(nlogn))
-					* Amazing: Insert elements of A into hash table H; For each x in A, lookup t-x (O(n))
+					![](./assets/Bloom_filter.png)
 				</section>
 
 				<section data-markdown>
-					## BLOOM FILTERS
-				</section>
+					## Reference
 
-				<section data-markdown>
 					1. [Backtracking | Set 5 (m Coloring Problem)](http://www.geeksforgeeks.org/backttracking-set-5-m-coloring-problem/)
 					2. [Check whether a given graph is Bipartite or not](http://www.geeksforgeeks.org/bipartite-graph/)
 					3. [Graph Coloring](https://en.wikipedia.org/wiki/Graph_coloring)
@@ -342,7 +356,7 @@
 					9. [Depth-first search](https://en.wikipedia.org/wiki/Depth-first_search)
 					10. [Heap](https://en.wikipedia.org/wiki/Heap_%28data_structure%29)
 					11. [Graph Search, Shortest Paths, and Data Structures - Coursera](https://coursera.org/learn/algorithms-graphs-data-structures)
-
+					12. [BLOOM FILTERS](https://en.wikipedia.org/wiki/Bloom_filter)
 				</section>
 			</div>
 
@@ -359,8 +373,9 @@
 				progress: true,
 				history: true,
 				center: true,
+				// showNotes: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
