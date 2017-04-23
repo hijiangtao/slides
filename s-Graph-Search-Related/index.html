@@ -60,28 +60,32 @@
 						- Computing Strong Components
 					</script>
 				</section>
+				
+				<section data-markdown>
+					## GRAPH SEARCH AND CONNECTIVITY
+				</section>
 
 				<section data-markdown>
 					## Breadth-first search
 
 					```
 					Breadth-First-Search(Graph, root):
-					    
-					    create empty set S
-					    create empty queue Q      
+						
+						create empty set S
+						create empty queue Q      
 
-					    add root to S
-					    Q.enqueue(root)                      
+						add root to S
+						Q.enqueue(root)                      
 
-					    while Q is not empty:
-					        current = Q.dequeue()
-					        if current is the goal:
-					            return current
-					        for each node n that is adjacent to current:
-					            if n is not in S:
-					                add n to S
-					                n.parent = current
-					                Q.enqueue(n)
+						while Q is not empty:
+							current = Q.dequeue()
+							if current is the goal:
+								return current
+							for each node n that is adjacent to current:
+								if n is not in S:
+									add n to S
+									n.parent = current
+									Q.enqueue(n)
 					```
 				</section>
 
@@ -97,12 +101,11 @@
 				</section>
 
 				<section data-markdown>
-					## Breadth-first search
-					### Application: Shortest Paths
+					## BFS Application: Shortest Paths
 
 					- [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 					- [Bellman–Ford algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
-					- A\* search algorithm solves for single pair shortest path using heuristics to try to speed up the search.
+					- [A\* search algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
 					- [Floyd-Warshall algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
 					- Johnson's algorithm.
 					- Viterbi algorithm.
@@ -111,11 +114,235 @@
 				<section data-markdown>
 					## BFS Application: Undirected Connectivity
 
-					* 在无向图 G=(V,E) 中，假设每条边 E[i] 的长度为 w[i]，找到由顶点 V0 到其余各点的最短路径。
-					* 确定起点的最短路径问题
-					* 确定终点的最短路径问题
-					* 确定起点终点的最短路径问题
-					* 全局最短路径问题
+					* 在无向图 G=(V,E) 中，判断整个图是否连通
+					* 图中存在几个 connected components
+					* 判断给定两个点之间是否连通
+					* 图中环的检测
+				</section>
+
+				<section data-markdown>
+					## Application: Bipartite graph
+
+					A Bipartite Graph is a graph whose vertices can be divided into two independent sets, U and V such that every edge (u,v) either connects a vertex from U to V or a vertex from V to U.
+
+					![](./assets/Bipartite1.png)
+				</section>
+
+				<section data-markdown>
+					### Backtracking Algorithm
+
+					* Assign RED color to the source vertex.
+					* Color all the neighbors with BLUE color.
+					* Loop until all vertexs are visited.
+					
+					*An edge from u to v exists and destination v is not colored or colored with same color as u;*
+
+					![](./assets/BipartiteGraph.png)
+				</section>
+
+				<section data-markdown>
+					### [Graph coloring](https://en.wikipedia.org/wiki/Graph_coloring) and Others
+
+					* Repeatedly call above method for not strongly connected graph.
+					* Before assigning a color, we check for safety by considering already assigned colors to the adjacent vertices. If we find a safe color assignment, we mark the color assignment as part of solution. If we do not a find color due to clashes then we backtrack and return false.
+
+					![](./assets/GraphColoring.png)
+				</section>
+
+				<section data-markdown>
+					## Depth-First Search
+
+					```
+					procedure DFS(G,v):
+						label v as discovered
+						for all edges from v to w in G.adjacentEdges(v) do
+							if vertex w is not labeled as discovered then
+								recursively call DFS(G,w)
+					```
+				</section>
+				
+				<section>
+					<section data-markdown>
+						## Application: Topological Sort
+						
+						![](./assets/GraphSort1.png)
+					</section>
+
+					<section data-markdown>
+						### Kahn's algorithm
+
+						```
+						L ← Empty list that will contain the sorted elements
+						S ← Set of all nodes with no incoming edges
+						while S is non-empty do
+							remove a node n from S
+							add n to tail of L
+							for each node m with an edge e from n to m do
+								remove edge e from the graph
+								if m has no other incoming edges then
+									insert m into S
+						if graph has edges then
+							return error (graph has at least one cycle)
+						else 
+							return L (a topologically sorted order)
+						```
+					</section>
+					<section data-markdown>
+						### Depth-first search
+
+						* visit(w)还没有被调用，即w还没有被mark，此时会调用 visit(w)，然后当 visit(w)返回之后，visit(v)才会返回
+						* visit(w)已经被调用并返回了，即w已经被mark
+						* visit(w)已经被调用但是在此时调用 visit(v)的时候还未返回
+
+						```
+						L ← Empty list that will contain the sorted nodes
+						while there are unmarked nodes do
+							select an unmarked node n
+							visit(n) 
+
+						function visit(node n)
+							if n has a temporary mark then stop (not a DAG)
+							if n is not marked (i.e. has not been visited yet) then
+								mark n temporarily
+								for each node m with an edge from n to m do
+									visit(m)
+								mark n permanently
+								unmark n temporarily
+								add n to head of L
+						```
+
+						### Other: Parallel algorithms
+					</section>
+				</section>
+				
+				<section data-markdown>
+					## Data Structure
+
+					Examples: Lists, stacks, queues, heaps, search trees, hashtables,	bloom filters, union‐find, etc.	
+
+					Point: Organize data so that it can be accessed quickly and usefully.
+  
+				</section>
+				
+				<section>
+					<section data-markdown>
+						## HEAPS and Applications
+						
+						* Operations: build (O(n)), insert (O(logn)), update, get (O(1)), delete (O(logn)), heapify
+						* Construction: bottom-up heap / top-down heap
+						* Applications: Sorting
+						* Applications: Priority Queue
+						* Applications: Median Maintenence (一组不断产生的随机数中找到并维持中位数的值)
+						* Applications: Speeding Up Dijkstra	
+ 
+					</section>
+					<section data-markdown>
+						### Sorting
+
+						* Q1: 寻找n个数里面最大的m个数?
+						* Q2: 20路已经有序，20路合并  求Top500?
+						* Q3: 请给出一个时间为O(nlgk)、用来将k个已排序链表合并为一个排序链表的算法，n为所有链表元素总数。
+
+						```
+						Array.prototype.heap_sort = function() {
+							var arr = this.slice(0);
+							function swap(i, j) {
+								var tmp = arr[i];
+								arr[i] = arr[j];
+								arr[j] = tmp;
+							}
+
+							function max_heapify(start, end) {
+								//建立父節點指標和子節點指標
+								var dad = start;
+								var son = dad * 2 + 1;
+								if (son >= end)//若子節點指標超過範圍直接跳出函數
+									return;
+								if (son + 1 < end && arr[son] < arr[son + 1])//先比較兩個子節點大小，選擇最大的
+									son++;
+								if (arr[dad] <= arr[son]) {//如果父節點小於子節點時，交換父子內容再繼續子節點和孫節點比較
+									swap(dad, son);
+									max_heapify(son, end);
+								}
+							}
+
+							var len = arr.length;
+							//初始化，i從最後一個父節點開始調整
+							for (var i = Math.floor(len / 2) - 1; i >= 0; i--)
+								max_heapify(i, len);
+							//先將第一個元素和已排好元素前一位做交換，再從新調整，直到排序完畢
+							for (var i = len - 1; i > 0; i--) {
+								swap(0, i);
+								max_heapify(0, i);
+							}
+
+							return arr;
+						};
+						```
+					</section>
+				</section>
+				
+				<section>
+					<section data-markdown>
+						## BALANCED BINARY SEARCH TREES
+						
+						对一棵查找树（search tree）进行查询/新增/删除 等动作, 所花时间与树高度h 成比例, 并不与树容量 n 成比例, 叫做balanced search tree（平衡树）。平衡指所有叶子的深度趋于平衡(在树上所有可能查找的均摊复杂度偏低)。
+
+						![](./assets/BST.png )
+					</section>
+
+					<section data-markdown>
+						## AVL Tree
+
+						平衡二叉树（AVL）：它或者是一棵空树，或者是具有一下性质的二叉查找树: 它的结点左子树和右子树的深度之差不超过1,而且该结点的左子树和右子树都是一棵平衡二叉树。
+
+						* Left Rotation:左旋,右子树右子节点
+						* Right Rotation:右旋,左子树左子节点
+						* Left-Right Rotation:先左旋再右旋,左子树右子节点
+						* Right-Left Rotation:先右旋再左旋,右子树左子节点
+
+						Q: 如何判断一棵树是否是平衡二叉树?
+					</section>
+				</section>
+
+
+				<section data-markdown>
+					## HASHING RELATED
+
+					哈希表的实现主要需要解决两个问题，哈希函数和冲突解决。
+
+					* 哈希函数也叫散列函数，它对不同的输出值得到一个固定长度的消息摘要。理想的哈希函数对于不同的输入应该产生不同的结构，同时散列结果应当具有同一性（输出值尽量均匀）和雪崩效应（微小的输入值变化使得输出值发生巨大的变化）。
+					* 现实中的哈希函数不是完美的，当两个不同的输入值对应一个输出值时，就会产生“碰撞”，这个时候便需要解决冲突。常见的冲突解决方法有开放定址法，链地址法，建立公共溢出区等。实际的哈希表实现中，使用最多的是链地址法
+				</section>
+
+				<section data-markdown>
+					### Application: The 2-SUM Problem
+
+					Input: unsorted array A of n integers, Target sum t;
+					Goal: determine whether or not there are two numbers x, y in A with x+y=t
+
+					* Naive Solution: O(n^2) time via exhaustive search
+					* Better: Sort A with O(nlogn) time; For each x in A, look for t-x in A via binary search (O(nlogn))
+					* Amazing: Insert elements of A into hash table H; For each x in A, lookup t-x (O(n))
+				</section>
+
+				<section data-markdown>
+					## BLOOM FILTERS
+				</section>
+
+				<section data-markdown>
+					1. [Backtracking | Set 5 (m Coloring Problem)](http://www.geeksforgeeks.org/backttracking-set-5-m-coloring-problem/)
+					2. [Check whether a given graph is Bipartite or not](http://www.geeksforgeeks.org/bipartite-graph/)
+					3. [Graph Coloring](https://en.wikipedia.org/wiki/Graph_coloring)
+					4. [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+					5. [Bellman–Ford algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
+					6. [A\* search algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
+					7. [Floyd-Warshall algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
+					8. [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
+					9. [Depth-first search](https://en.wikipedia.org/wiki/Depth-first_search)
+					10. [Heap](https://en.wikipedia.org/wiki/Heap_%28data_structure%29)
+					11. [Graph Search, Shortest Paths, and Data Structures - Coursera](https://coursera.org/learn/algorithms-graphs-data-structures)
+
 				</section>
 			</div>
 
