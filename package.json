@@ -1,22 +1,22 @@
 {
-  "name": "",
-  "version": "",
-  "description": "The HTML Presentation Framework",
-  "homepage": "",
-  "subdomain": "revealjs",
-  "main": "js/reveal.js",
+  "name": "slides",
+  "version": "0.0.1",
+  "description": "The HTML Presentation Slides collection of Joe",
+  "homepage": "https://github.com/hijiangtao/slides",
+  "subdomain": "",
+  "main": "",
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve"
   },
   "author": {
-    "name": "",
-    "email": "",
-    "web": ""
+    "name": "Joe Jiang",
+    "email": "hijiangtao@gmail.com",
+    "web": "https://hijiangtao.github.io/"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/hijiangtao/slides"
   },
   "engines": {
     "node": "~4.1.1"
