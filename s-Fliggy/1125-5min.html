@@ -20,7 +20,7 @@
 </style>
 
 		<meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="VAmengHSsFIDHn3Mp3RmtipNok7hdmSC3fkinbXubkk3BgaCSQbyNrKPVdTCwoeX7jHZqmOMWl5K8T3S6zYJxQ==" />
+<meta name="csrf-token" content="QUp4/CCYvbNiqoZxdqy3ieS3Xf7CtjQZHkcL4/ZTg24iReDgaEz/19M7rmkTGlaoIMsmGkBMCsWJTxSsqIvk4g==" />
 		<style id="user-css-output" type="text/css"></style>
 	</head>
 	<body>
@@ -85,7 +85,7 @@ typeof 123n; // 'bigint'</code></pre></div></div></section><section data-id="58e
 <div class="sl-block" data-block-type="text" style="width: 860px; left: 79px; top: 472px; height: auto;" data-block-id="c7dbfc24d8d9cc3caa69598fbd752e38"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <p>BigInt</p>
 </div></div>
-</section></section><section class="stack" data-id="71e4e6d84e906b9aecd418d2881c91ff"><section data-id="1c489700c9ce4862463bdb3d63216e3c"><div class="sl-block" data-block-type="code" data-block-id="139ed7bd79ffb7a8e02c5facd94a4b00" style="min-width: 30px; min-height: 30px; width: 847px; height: 277px; left: 89px; top: 11px;"><div class="sl-block-content notranslate" style="z-index: 11;"><pre class="typescript"><code>// old
+</section></section><section class="stack" data-id="71e4e6d84e906b9aecd418d2881c91ff"><section data-id="1c489700c9ce4862463bdb3d63216e3c"><div class="sl-block" data-block-type="code" data-block-id="139ed7bd79ffb7a8e02c5facd94a4b00" style="min-width: 30px; min-height: 30px; width: 847px; height: 288px; left: 89px; top: 10px;"><div class="sl-block-content notranslate" style="z-index: 11;"><pre class="typescript"><code>// old
 const print = (readable) =&gt; {
     readable.setEncoding('utf8');
     let data = '';
@@ -99,7 +99,7 @@ const print = (readable) =&gt; {
 
 const fs = require('fs');
 print(fs.createReadStream('./file.txt'));</code></pre></div></div>
-<div class="sl-block" data-block-type="code" data-block-id="b118f674af0567f389e0089c12ec0965" style="min-width: 30px; min-height: 30px; width: 847px; height: 262px; left: 89px; top: 295px;"><div class="sl-block-content notranslate fragment" style="z-index: 12;" data-fragment-index="0"><pre class="typescript"><code>// new
+<div class="sl-block" data-block-type="code" data-block-id="b118f674af0567f389e0089c12ec0965" style="min-width: 30px; min-height: 30px; width: 847px; height: 262px; left: 89px; top: 305px;"><div class="sl-block-content notranslate fragment" style="z-index: 12;" data-fragment-index="0"><pre class="typescript"><code>// new
 async function print(readable) {
     readable.setEncoding('utf8');
     let data = '';
@@ -152,13 +152,13 @@ const result = pattern.exec('2017-07-10');
 <div class="sl-block" data-block-type="text" style="width: 860px; left: 79px; top: 472px; height: auto;" data-block-id="49d92269ee372be67336d3a2743ce8e3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <p>Named captures</p>
 </div></div>
-</section></section><section class="stack" data-id="007a19c9b9ad290cbfa478246e6d570a"><section data-id="28506f6787dd234d476b6a24508cc69a"><div class="sl-block" data-block-type="code" data-block-id="acf1dfd3f3191df41a3ac17e4d629e46" style="min-width: 30px; min-height: 30px; width: 715px; height: 130px; left: 155px; top: 161px;"><div class="sl-block-content notranslate" style="z-index: 11;"><pre class="typescript"><code>const string = 'Magic hex numbers: DEADBEEF CAFE 8BADF00D';
+</section></section><section class="stack" data-id="007a19c9b9ad290cbfa478246e6d570a"><section data-id="28506f6787dd234d476b6a24508cc69a"><div class="sl-block" data-block-type="code" data-block-id="acf1dfd3f3191df41a3ac17e4d629e46" style="min-width: 30px; min-height: 30px; width: 715px; height: 130px; left: 155px; top: 179px;"><div class="sl-block-content notranslate" style="z-index: 11;"><pre class="typescript"><code>const string = 'Magic hex numbers: DEADBEEF CAFE 8BADF00D';
 const regex = /\b\p{ASCII_Hex_Digit}+\b/gu;
 let match;
 while (match = regex.exec(string)) {
     console.log(match);
 }</code></pre></div></div>
-<div class="sl-block" data-block-type="code" data-block-id="7b6a16112e6ebe570220616a42c3f4fb" style="min-width: 30px; min-height: 30px; width: 715px; height: 116px; left: 155px; top: 300px;"><div class="sl-block-content notranslate fragment" style="z-index: 12;" data-fragment-index="0"><pre class="typescript"><code>for (const match of string.matchAll(regex)) {
+<div class="sl-block" data-block-type="code" data-block-id="7b6a16112e6ebe570220616a42c3f4fb" style="min-width: 30px; min-height: 30px; width: 715px; height: 79px; left: 155px; top: 318px;"><div class="sl-block-content notranslate fragment" style="z-index: 12;" data-fragment-index="0"><pre class="typescript"><code>for (const match of string.matchAll(regex)) {
     console.log(match);
 }</code></pre></div></div></section><section data-id="ab371a8c0c4d3bc91d7f2ec1ac0185ec"><div class="sl-block" data-block-type="image" style="width: 945px; height: 121px; left: 40px; top: 228px; min-width: 4px; min-height: 4px;" data-block-id="63d56f231547a8e1f7406a1b139a3d50"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1827" data-natural-height="233" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/568698/images/5521740/图片_1.png"></div></div>
 <div class="sl-block" data-block-type="text" style="width: 860px; left: 82px; top: 472px; height: auto;" data-block-id="0ee49bb009f1827688c8baceab22fc48"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
@@ -167,7 +167,7 @@ while (match = regex.exec(string)) {
 <div class="sl-block" data-block-type="text" style="width: 860px; left: 79px; top: 472px; height: auto;" data-block-id="31d79d2327999ce6efa4dd2b925fe60c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <p>String Matchall</p>
 </div></div>
-</section></section><section class="stack" data-id="7f8cb34e3ee65c1638ab0ae51be21c0f"><section data-id="851338869339a82cad77b35e1f4c0a3d"><div class="sl-block" data-block-type="code" data-block-id="706c2dbebd4cbf081cbc3deb6772ba25" style="min-width: 30px; min-height: 30px; width: 500px; height: 87px; left: 262px; top: 245px;"><div class="sl-block-content notranslate" style="z-index: 11;"><pre class="typescript"><code>try {} catch (e) {} // 以前
+</section></section><section class="stack" data-id="7f8cb34e3ee65c1638ab0ae51be21c0f"><section data-id="851338869339a82cad77b35e1f4c0a3d"><div class="sl-block" data-block-type="code" data-block-id="706c2dbebd4cbf081cbc3deb6772ba25" style="min-width: 30px; min-height: 30px; width: 500px; height: 76px; left: 262px; top: 250px;"><div class="sl-block-content notranslate" style="z-index: 11;"><pre class="typescript"><code>try {} catch (e) {} // 以前
 
 try {} catch {} // 现在</code></pre></div></div></section><section data-id="f3ee54c98dd56587eb94cf45c80c7f9f"><div class="sl-block" data-block-type="image" style="width: 945px; height: 121px; left: 40px; top: 228px; min-width: 4px; min-height: 4px;" data-block-id="4a918c20aa06070a34019259ffc13a94"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1827" data-natural-height="233" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/568698/images/5521740/图片_1.png"></div></div>
 <div class="sl-block" data-block-type="text" style="width: 860px; left: 82px; top: 472px; height: auto;" data-block-id="e09ccca152191015eade839af68a112a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
@@ -203,7 +203,18 @@ fetch(myRequest).then(function(response) {
     isLoading = false;
     console.log(error); });
 
-// ?</code></pre></div></div></section><section data-id="2aa903f84a3819809a2175babb5cd7ac"><div class="sl-block" data-block-type="image" style="width: 945px; height: 121px; left: 40px; top: 228px; min-width: 4px; min-height: 4px;" data-block-id="81f57067671ae009d12a5c300fe177fc"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1827" data-natural-height="233" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/568698/images/5521740/图片_1.png"></div></div>
+// ?</code></pre></div></div></section><section data-id="72e650bc34c2e1fe3d60790696201ef5"><div class="sl-block" data-block-type="code" style="width: 703px; height: 258px; left: 161px; top: 159px;" data-block-id="ff285ba2d2d885b5510fd5c86efca911"><div class="sl-block-content notranslate" style="z-index: 10;"><pre class="typescript"><code>let isLoading = true;
+
+fetch(myRequest).then(function(response) {
+    var contentType = response.headers.get("content-type");
+    if(contentType &amp;&amp; contentType.includes("application/json")) {
+      return response.json();
+    }
+    throw new TypeError("Oops, we haven't got JSON!");
+  })
+  .then(function(json) { /* process your JSON further */ })
+  .catch(function(error) { console.log(error); })
+  .finally(function() { isLoading = false; });</code></pre></div></div></section><section data-id="2aa903f84a3819809a2175babb5cd7ac"><div class="sl-block" data-block-type="image" style="width: 945px; height: 121px; left: 40px; top: 228px; min-width: 4px; min-height: 4px;" data-block-id="81f57067671ae009d12a5c300fe177fc"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1827" data-natural-height="233" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/568698/images/5521740/图片_1.png"></div></div>
 <div class="sl-block" data-block-type="text" style="width: 860px; left: 82px; top: 472px; height: auto;" data-block-id="ca527754795a7a74baac92217bb14fdb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <p>Promise.prototype.finally</p>
 </div></div></section><section data-id="4b89d1a91d4586f1dafcea027f8b7d77"><div class="sl-block" data-block-type="image" style="width: 945px; height: 121px; left: 40px; top: 228px; min-width: 4px; min-height: 4px;" data-block-id="230e8581a4c18ef0555020dad028ea0e"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1827" data-natural-height="233" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/568698/images/5521826/1lose.png"></div></div>
@@ -255,6 +266,44 @@ class Counter extends HTMLElement {
     this.textContent = this.x.toString();
   }
 }
+window.customElements.define('num-counter', Counter);</code></pre></div></div></section><section data-id="6b7845bf96ecdc6f998e1f2a14409635"><div class="sl-block" data-block-type="code" style="width: 672px; height: 407px; left: 176px; top: 85px;" data-block-id="5cabd2f7fc0c0b9085a30fd2eefb1e69"><div class="sl-block-content notranslate" style="z-index: 10;"><pre class="typescript"><code>class Counter extends HTMLElement {
+  x = 0;
+
+  clicked() {
+    this.x++;
+    window.requestAnimationFrame(this.render.bind(this));
+  }
+
+  constructor() {
+    super();
+    this.onclick = this.clicked.bind(this);
+  }
+
+  connectedCallback() { this.render(); }
+
+  render() {
+    this.textContent = this.x.toString();
+  }
+}
+window.customElements.define('num-counter', Counter);</code></pre></div></div></section><section data-id="ef21f0999e3fb9aeb0fed3c379335b8b"><div class="sl-block" data-block-type="code" style="width: 672px; height: 407px; left: 176px; top: 85px;" data-block-id="081ba4b0360f10c335baad7c258dfc62"><div class="sl-block-content notranslate" style="z-index: 10;"><pre class="typescript"><code>class Counter extends HTMLElement {
+  #x = 0;
+
+  clicked() {
+    this.#x++;
+    window.requestAnimationFrame(this.render.bind(this));
+  }
+
+  constructor() {
+    super();
+    this.onclick = this.clicked.bind(this);
+  }
+
+  connectedCallback() { this.render(); }
+
+  render() {
+    this.textContent = this.#x.toString();
+  }
+}
 window.customElements.define('num-counter', Counter);</code></pre></div></div></section><section data-id="488377984e74d02f9535cdbb7de3f9b0"><div class="sl-block" data-block-type="image" style="width: 945px; height: 121px; left: 40px; top: 228px; min-width: 4px; min-height: 4px;" data-block-id="72f69867b69a029759b19a7b13d65798"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1827" data-natural-height="233" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/568698/images/5521740/图片_1.png"></div></div>
 <div class="sl-block" data-block-type="text" style="width: 860px; left: 82px; top: 472px; height: auto;" data-block-id="2d0c3414c37decf83273e6a8ae4c8cba"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <p>Class fileds</p>
@@ -264,13 +313,17 @@ window.customElements.define('num-counter', Counter);</code></pre></div></div></
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 458px; left: 553px; top: 10px;" data-block-id="254df4dbf71fffc7093cd95cbaf36974"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <p><em><span style="font-size:0.5em">Stage 3 Proposal <a href="https://github.com/tc39/proposal-class-fields" target="_blank">https://github.com/tc39/proposal-class-fields</a></span></em></p>
-</div></div></section></section>
+</div></div></section></section><section data-id="599599355e81d430d0142fe7a6855da8"><div class="sl-block" data-block-type="text" style="width: 922px; left: 30px; top: 58px; height: auto;" data-block-id="78ce47b957fb3dd977aea0236ce43212"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<p><a href="https://hijiangtao.js.org" target="_blank">黯晓</a></p>
+
+<p>2018.11</p>
+</div></div></section>
 			</div>
 		</div>
 
 		
 <script>
-	var SLConfig = {"current_user":{"id":568698,"username":"hijiangtao","name":"Joe Jiang","description":"","thumbnail_url":"https://lh5.googleusercontent.com/-Ky0JkZPHrjg/AAAAAAAAAAI/AAAAAAAAAQ0/6hzBzKGyeLc/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":413354,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":true,"speaker_layout":null,"phone_number":null,"phone_country_code":null,"media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null},"email":"hijiangtao@gmail.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":1,"storage_used":6562162,"storage_limit":262144000},"deck":{"id":1380149,"slug":"write-ecmascript-in-2018","title":"赶上ECMAScript的潮流","description":"","width":1024,"height":576,"visibility":"all","published_at":"2018-11-23T07:15:35.958Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/b561eba8c04a5e467bb7b888ca5418df/thumb.jpg?1542960878","view_count":0,"user":{"id":568698,"username":"hijiangtao","name":"Joe Jiang","description":"","thumbnail_url":"https://lh5.googleusercontent.com/-Ky0JkZPHrjg/AAAAAAAAAAI/AAAAAAAAAQ0/6hzBzKGyeLc/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":413354,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"none","transition":"fade","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":51,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1542960711460,"font_typekit":null,"font_google":null,"notes":{}},"user":{"id":568698,"username":"hijiangtao","name":"Joe Jiang","description":"","thumbnail_url":"https://lh5.googleusercontent.com/-Ky0JkZPHrjg/AAAAAAAAAAI/AAAAAAAAAQ0/6hzBzKGyeLc/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":413354,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
+	var SLConfig = {"current_user":{"id":568698,"username":"hijiangtao","name":"Joe Jiang","description":"","thumbnail_url":"https://lh5.googleusercontent.com/-Ky0JkZPHrjg/AAAAAAAAAAI/AAAAAAAAAQ0/6hzBzKGyeLc/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":413354,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":true,"speaker_layout":null,"phone_number":null,"phone_country_code":null,"media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null},"email":"hijiangtao@gmail.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":1,"storage_used":6562162,"storage_limit":262144000},"deck":{"id":1380149,"slug":"write-ecmascript-in-2018","title":"赶上ECMAScript的潮流","description":"","width":1024,"height":576,"visibility":"all","published_at":"2018-11-23T07:15:35.958Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/b561eba8c04a5e467bb7b888ca5418df/thumb.jpg?1542961702","view_count":1,"user":{"id":568698,"username":"hijiangtao","name":"Joe Jiang","description":"","thumbnail_url":"https://lh5.googleusercontent.com/-Ky0JkZPHrjg/AAAAAAAAAAI/AAAAAAAAAQ0/6hzBzKGyeLc/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":413354,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"none","transition":"fade","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":55,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1542961712744,"font_typekit":null,"font_google":null,"notes":{}},"user":{"id":568698,"username":"hijiangtao","name":"Joe Jiang","description":"","thumbnail_url":"https://lh5.googleusercontent.com/-Ky0JkZPHrjg/AAAAAAAAAAI/AAAAAAAAAQ0/6hzBzKGyeLc/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":413354,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
 </script>
 
 		<script>
