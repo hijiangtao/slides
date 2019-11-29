@@ -16,7 +16,7 @@ This repository holds codes of my sharing slides.
 |[Let’s GAN 前传：简单聊聊人脸识别](https://hijiangtao.github.io/slides/s-Fliggy/1221-5min.html#/)|通用人脸识别流程中的基本概念、原理和一些应用。并从前端的角度结合 TensorFlow.js 给出了一些 Demo。 |[![image](https://user-images.githubusercontent.com/4990015/51118983-a23d0580-184c-11e9-84ba-759e33457c43.png)](https://hijiangtao.github.io/slides/s-Fliggy/1221-5min.html#/)|分享|
 |[Hello, Flutter](https://hijiangtao.github.io/slides/s-Fliggy/Hello-Flutter-at-Beginning-of-2019.html#/)|A brief recap of Mobile Development and detailed introduction about Flutter and its internals from three aspects (WHAT, WHY and HOW).|[![image](https://user-images.githubusercontent.com/4990015/51296413-1945ea00-1a57-11e9-8bab-47127dec50ef.png)](https://hijiangtao.github.io/slides/s-Fliggy/Hello-Flutter-at-Beginning-of-2019.html#/)|分享|
 |[Introduction of Algebraic Effects](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-Algebraic-Effects.html#/)|Algebraic Effects|[![image](https://user-images.githubusercontent.com/4990015/65745768-5b1f4800-e12f-11e9-90ba-30a11cf70a55.png)](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-Algebraic-Effects.html#/)|分享|
-
+|[Introduction of webpack plugin](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-webpack-plugin.html#/)|webpack plugin|[![image](https://user-images.githubusercontent.com/4990015/69852858-480c2e00-12c0-11ea-81d7-4ac9e7a56232.png)](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-webpack-plugin.html#/)|分享|
 
 ## 2 / Plans
 
