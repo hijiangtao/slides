@@ -17,6 +17,7 @@ This repository holds codes of my sharing slides.
 |[Hello, Flutter](https://hijiangtao.github.io/slides/s-Fliggy/Hello-Flutter-at-Beginning-of-2019.html#/)|A brief recap of Mobile Development and detailed introduction about Flutter and its internals from three aspects (WHAT, WHY and HOW).|[![image](https://user-images.githubusercontent.com/4990015/51296413-1945ea00-1a57-11e9-8bab-47127dec50ef.png)](https://hijiangtao.github.io/slides/s-Fliggy/Hello-Flutter-at-Beginning-of-2019.html#/)|分享|
 |[Introduction of Algebraic Effects](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-Algebraic-Effects.html#/)|Algebraic Effects|[![image](https://user-images.githubusercontent.com/4990015/65745768-5b1f4800-e12f-11e9-90ba-30a11cf70a55.png)](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-Algebraic-Effects.html#/)|分享|
 |[Introduction of webpack plugin](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-webpack-plugin.html#/)|webpack plugin|[![image](https://user-images.githubusercontent.com/4990015/69852858-480c2e00-12c0-11ea-81d7-4ac9e7a56232.png)](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-webpack-plugin.html#/)|分享|
+|[Coding with Angular - Tips and tricks](https://hijiangtao.github.io/slides/s-YFD/Coding-with-Angular-Tips-and-Tricks.html#/)|Angular best practice|[![image](https://user-images.githubusercontent.com/4990015/79878031-8648ec00-841f-11ea-9d52-da909b4754d2.png)](https://hijiangtao.github.io/slides/s-YFD/Coding-with-Angular-Tips-and-Tricks.html#/)|分享|
 
 ## 2 / Plans
 
