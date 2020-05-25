@@ -18,6 +18,7 @@ This repository holds codes of my sharing slides.
 |[Introduction of Algebraic Effects](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-Algebraic-Effects.html#/)|Algebraic Effects|[![image](https://user-images.githubusercontent.com/4990015/65745768-5b1f4800-e12f-11e9-90ba-30a11cf70a55.png)](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-Algebraic-Effects.html#/)|分享|
 |[Introduction of webpack plugin](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-webpack-plugin.html#/)|webpack plugin|[![image](https://user-images.githubusercontent.com/4990015/69852858-480c2e00-12c0-11ea-81d7-4ac9e7a56232.png)](https://hijiangtao.github.io/slides/s-Fliggy/Introduction-of-webpack-plugin.html#/)|分享|
 |[Coding with Angular - Tips and tricks](https://hijiangtao.github.io/slides/s-YFD/Coding-with-Angular-Tips-and-Tricks.html#/)|Angular best practice|[![image](https://user-images.githubusercontent.com/4990015/79878031-8648ec00-841f-11ea-9d52-da909b4754d2.png)](https://hijiangtao.github.io/slides/s-YFD/Coding-with-Angular-Tips-and-Tricks.html#/)|分享|
+|[欢迎来到 Deno 世界](https://hijiangtao.github.io/slides/s-YFD/Welcome-to-Deno-World#/)|Deno 入门介绍|[![image](https://user-images.githubusercontent.com/4990015/82802793-0b597200-9eb2-11ea-92a1-9daccc7a2350.png)](https://hijiangtao.github.io/slides/s-YFD/Welcome-to-Deno-World#/)|分享|
 
 ## 2 / Plans
 
