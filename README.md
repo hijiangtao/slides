@@ -20,6 +20,8 @@ This repository holds codes of my sharing slides.
 |[Coding with Angular - Tips and tricks](https://hijiangtao.github.io/slides/s-YFD/Coding-with-Angular-Tips-and-Tricks.html#/)|Angular best practice|[![image](https://user-images.githubusercontent.com/4990015/79878031-8648ec00-841f-11ea-9d52-da909b4754d2.png)](https://hijiangtao.github.io/slides/s-YFD/Coding-with-Angular-Tips-and-Tricks.html#/)|分享|
 |[欢迎来到 Deno 世界](https://hijiangtao.github.io/slides/s-YFD/Welcome-to-Deno-World#/)|Deno 入门介绍|[![image](https://user-images.githubusercontent.com/4990015/82802793-0b597200-9eb2-11ea-92a1-9daccc7a2350.png)](https://hijiangtao.github.io/slides/s-YFD/Welcome-to-Deno-World#/)|分享|
 |[JavaScript 引擎基础入门](https://hijiangtao.github.io/slides/s-YFD/JavaScript-Engine-Fundamentals.pdf)|JavaScript 引擎基础入门|[![image](https://user-images.githubusercontent.com/4990015/83507582-53ecdd00-a4fb-11ea-848d-4f73ffe1c024.png)](https://hijiangtao.github.io/slides/s-YFD/JavaScript-Engine-Fundamentals.pdf)|分享|
+|[Play with Canvas](https://hijiangtao.github.io/slides/s-YFD/Play-with-Canvas)|关于 canvas 的各类用法|[![image](https://user-images.githubusercontent.com/4990015/93768121-873ead80-fc4b-11ea-9df8-a4edaa161700.png)](https://hijiangtao.github.io/slides/s-YFD/Play-with-Canvas)|分享|
+|[Get Started with Deno](https://hijiangtao.github.io/slides/s-YFD/Get-started-with-Deno.pdf)|Get Started with Deno|[![image](https://user-images.githubusercontent.com/4990015/93768254-b35a2e80-fc4b-11ea-915f-4411fb2406f6.png)](https://hijiangtao.github.io/slides/s-YFD/Get-started-with-Deno.pdf)|分享|
 
 ## 2 / Plans
 
