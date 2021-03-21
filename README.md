@@ -22,6 +22,7 @@ This repository holds codes of my sharing slides.
 |[JavaScript 引擎基础入门](https://hijiangtao.github.io/slides/s-YFD/JavaScript-Engine-Fundamentals.pdf)|JavaScript 引擎基础入门|[![image](https://user-images.githubusercontent.com/4990015/83507582-53ecdd00-a4fb-11ea-848d-4f73ffe1c024.png)](https://hijiangtao.github.io/slides/s-YFD/JavaScript-Engine-Fundamentals.pdf)|分享|
 |[Play with Canvas](https://hijiangtao.github.io/slides/s-YFD/Play-with-Canvas)|关于 canvas 的各类用法|[![image](https://user-images.githubusercontent.com/4990015/93768121-873ead80-fc4b-11ea-9df8-a4edaa161700.png)](https://hijiangtao.github.io/slides/s-YFD/Play-with-Canvas)|分享|
 |[Get Started with Deno](https://hijiangtao.github.io/slides/s-YFD/Get-started-with-Deno.pdf)|Get Started with Deno|[![image](https://user-images.githubusercontent.com/4990015/93768254-b35a2e80-fc4b-11ea-915f-4411fb2406f6.png)](https://hijiangtao.github.io/slides/s-YFD/Get-started-with-Deno.pdf)|分享|
+|[Functions](https://hijiangtao.github.io/slides/s-YFD/Functions)|Get Started with Deno|[![image](./screenshots/s-YFD-Functions.png)](https://hijiangtao.github.io/slides/s-YFD/Functions)|分享|
 
 ## 2 / Plans
 
